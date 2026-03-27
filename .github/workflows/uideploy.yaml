@@ -26,7 +26,11 @@ jobs:
       env:
         CI: false  
     - name: Check build folder
-      run: ls -la      
+      run: ls -la  
+    - name: Azure Login
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}    
         
 
     # React case: build folder deploy hota hai
